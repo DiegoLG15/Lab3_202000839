@@ -24,14 +24,11 @@
         <th></th>
         <th></th>
       </tr>
-      <tr th:each="shipper, info : ${}">
+      <tr th:each="shipper, info : ${hospital}">
         <td th:text="${info.index + 1}"></td>
-        <td th:text="${doctorList.nombre}"></td>
-        <td th:text="${doctorList.telefono}"></td>
-        <td><a class="btn btn-primary" th:href="@{'/shipper/edit' + '?id=' + ${doctorList.}}">Editar</a>
-        </td>
-        <td><a class="btn btn-danger" th:href="@{'/shipper/delete' + '?id=' + ${shipper.shipperId}}">Borrar</a>
-        </td>
+        <td th:text="${hospital.nombre}"></td>
+        <td th:text="${hospital.telefono}"></td>
+
       </tr>
     </table>
   </div>
