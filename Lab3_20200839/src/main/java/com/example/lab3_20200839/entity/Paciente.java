@@ -10,11 +10,10 @@ import lombok.Setter;
 @Entity
 @Table(name="paciente")
 public class Paciente {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int pacienteId;
+    private Integer pacienteId;
 
     @Column(name = "nombre",nullable = false)
     private String nombrePaciente;
@@ -36,9 +35,9 @@ public class Paciente {
     private int habitacionPaciente;
 
     @Column(name = "doctor_id")
-    private int doctorPaciente;
+    private Integer doctorPaciente;
 
     @Column(name = "hospital_id")
-    private int hospitalPaciente;
+    private Integer hospitalPaciente;
 
 }

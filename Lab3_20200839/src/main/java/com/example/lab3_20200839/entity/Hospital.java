@@ -15,7 +15,7 @@ public class Hospital {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int hospitalId;
+    private Integer hospitalId;
 
     @Column(name = "nombre", nullable = false)
     private String hospitalNombre;

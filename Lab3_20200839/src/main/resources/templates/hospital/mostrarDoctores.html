@@ -29,24 +29,19 @@
     </nav>
   </header>
   <div class="container px-4 py-5">
-    <h1 class="pb-2 border-bottom">Lista hospitales</h1>
+    <h1 class="pb-2 border-bottom">Lista de doctores</h1>
     <table class="table table-sm">
       <tr>
         <th>#</th>
         <th>Nombre</th>
-        <th>Direccion</th>
-        <th>Teléfono</th>
-        <th></th>
-        <th></th>
+        <th>Especialidad</th>
+        <th>Hospital</th>
       </tr>
-      <tr th:each="hospital, info : ${listHospital}">
+      <tr th:each="doctor, info : ${listDoctores}">
         <td th:text="${info.index + 1}"></td>
-        <td th:text="${hospital.hospitalNombre}"></td>
-        <td th:text="${hospital.hospitalDireccion}"></td>
-        <td th:text="${hospital.hospitalTelefono}"></td>
-        <td><a class="btn btn-success" th:href="@{'/hospitalDoctor?id=' + ${hospital.hospitalId}}"> Mostrar Doctores</a>
-        <td><a class="btn btn-success" th:href="@{'/hospitalPacientes?id=' + ${hospital.hospitalId}}">Próximas citas</a>
-        </td>
+        <td th:text="${doctor.doctorNombre}"></td>
+        <td th:text="${doctor.doctorEspecialidad}"></td>
+        <td th:text="${doctor.doctorHospital}"></td>
       </tr>
     </table>
   </div>

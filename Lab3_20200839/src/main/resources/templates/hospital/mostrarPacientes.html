@@ -29,25 +29,30 @@
         </nav>
     </header>
     <div class="container px-4 py-5">
-        <h1 class="pb-2 border-bottom">Lista de doctores</h1>
+        <h1 class="pb-2 border-bottom">Lista pacientes</h1>
         <table class="table table-sm">
             <tr>
                 <th>#</th>
                 <th>Nombre</th>
-                <th>Especialidad</th>
-                <th>Hospital</th>
-                <th></th>
-                <th></th>
+                <th>Edad</th>
+                <th>Genero</th>
+                <th>Diagnostico</th>
+                <th>Fecha de la cita</th>
+                <th>Numero de habitacion</th>
+                <th>ID Doctor</th>
+                <th>Hospital ID</th>
+
             </tr>
-            <tr th:each="doctor, info : ${listDoctor}">
+            <tr th:each="paciente, info : ${listaPacientes}">
                 <td th:text="${info.index + 1}"></td>
-                <td th:text="${doctor.doctorNombre}"></td>
-                <td th:text="${doctor.doctorEspecialidad}"></td>
-                <td th:text="${doctor.doctorHospital}"></td>
-                <td ><a class="btn btn-primary" th:href="@{'/doctorPaciente?id=' + ${doctor.doctorId}}">Mostrar pacientes</a>
-                </td>
-                <td><a class="btn btn-success" th:href="@{'/doctorCita?id=' + ${doctor.doctorId}}">Próximas citas</a>
-                </td>
+                <td th:text="${paciente.nombrePaciente}"></td>
+                <td th:text="${paciente.edadPaceinte}"></td>
+                <td th:text="${paciente.generoPaciente}"></td>
+                <td th:text="${paciente.diagnosticoPaciente}"></td>
+                <td th:text="${paciente.fechaCita}"></td>
+                <td th:text="${paciente.habitacionPaciente}"></td>
+                <td th:text="${paciente.doctorPaciente}"></td>
+                <td th:text="${paciente.hospitalPaciente}"></td>
             </tr>
         </table>
     </div>

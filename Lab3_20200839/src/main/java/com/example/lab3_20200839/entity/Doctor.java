@@ -13,7 +13,7 @@ public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int doctorId;
+    private Integer doctorId;
 
     @Column(name = "nombre", nullable = false)
     private String doctorNombre;
@@ -21,6 +21,6 @@ public class Doctor {
     @Column(name = "especialidad")
     private String doctorEspecialidad;
     @Column(name = "hospital_id")
-    private int doctorHospital;
+    private Integer doctorHospital;
 
 }
