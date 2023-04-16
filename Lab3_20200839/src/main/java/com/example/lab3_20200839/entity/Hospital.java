@@ -2,6 +2,12 @@ package com.example.lab3_20200839.entity;
 
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Getter
+@Setter
 
 @Entity
 @Table(name="hospital")
@@ -18,7 +24,7 @@ public class Hospital {
     private String hospitalDireccion;
 
     @Column(name = "telefono")
-    private int hospitalTelefono;
+    private String hospitalTelefono;
 
 }
 

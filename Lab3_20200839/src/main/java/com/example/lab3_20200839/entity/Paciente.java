@@ -41,6 +41,4 @@ public class Paciente {
     @Column(name = "hospital_id")
     private int hospitalPaciente;
 
-
-
 }

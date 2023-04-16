@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Encabezado con Bootstrap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<main>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Clínica</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/listaHospitales}">Hospital</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/listaPacientes}">Paciente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/listaDoctores}">Doctor</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container px-4 py-5">
+        <h1 class="pb-2 border-bottom">Lista de doctores</h1>
+        <table class="table table-sm">
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Especialidad</th>
+                <th>Hospital</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr th:each="doctor, info : ${listDoctor}">
+                <td th:text="${info.index + 1}"></td>
+                <td th:text="${doctor.doctorNombre}"></td>
+                <td th:text="${doctor.doctorEspecialidad}"></td>
+                <td th:text="${doctor.doctorHospital}"></td>
+                <td><a class="btn btn-primary">Mostrar pacientes</a>
+                </td>
+                <td><a class="btn btn-success" >Próximas citas</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

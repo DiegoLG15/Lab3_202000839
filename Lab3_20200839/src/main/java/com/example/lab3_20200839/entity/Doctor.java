@@ -23,5 +23,4 @@ public class Doctor {
     @Column(name = "hospital_id")
     private int doctorHospital;
 
-
 }
