@@ -29,6 +29,7 @@
     </nav>
   </header>
   <div class="container px-4 py-5">
+    <a class="btn btn-success" th:href="@{'/derivPaciente'}">Derivar pacientes</a>
     <h1 class="pb-2 border-bottom">Lista pacientes</h1>
     <table class="table table-sm">
       <tr>
@@ -54,9 +55,7 @@
         <td th:text="${paciente.habitacionPaciente}"></td>
         <td th:text="${paciente.doctorPaciente}"></td>
         <td th:text="${paciente.hospitalPaciente}"></td>
-        <td><a class="btn btn-primary">editar</a>
-        </td>
-        <td><a class="btn btn-success" >Derivar pacientes</a>
+        <td><a class="btn btn-primary" th:href="@{'/editar' + '?id=' + ${paciente.pacienteId}}">editar</a>
         </td>
       </tr>
     </table>

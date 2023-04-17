@@ -7,8 +7,10 @@ import com.example.lab3_20200839.repository.PacienteRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -38,9 +40,8 @@ public class DoctorController {
     }
     @GetMapping("/doctorCita")
     public String mostrarCitas(@RequestParam("id") Integer id, Model model) {
-
-        String fechaLimite = ("2023-04-11");
-        List<Paciente> lista = pacienteRepository.findByDoctorPacienteAndFechaCitaAfter(id,fechaLimite);
+        LocalDate localDate = LocalDate.now();
+        List<Paciente> lista = pacienteRepository.findByDoctorPacienteAndFechaCitaAfter(id, String.valueOf(localDate));
         model.addAttribute("listaPacientes", lista);
         return "doctor/doctorCita";
     }
